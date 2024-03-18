@@ -1,30 +1,13 @@
 import styled from "styled-components";
+import { data } from "@/data/data";
 
 interface Props {
-  productsArray: (
-    | {
-        id: number;
-        name: string;
-        price: number;
-        size: string[];
-        type: string;
-        colors: string[];
-        description: string;
-        images: string[];
-        reviews: {
-          id: number;
-          user: string;
-          avatar: string;
-          comment: string;
-          rating: number;
-        }[];
-      }
-    | {}
-  )[];
   showMore: boolean;
 }
 
-export const SimilarProductsData = ({ productsArray, showMore }: Props) => {
+export const SimilarProductsData = ({ showMore }: Props) => {
+  const productsArray = Object.values(data).slice(1);
+
   return (
     <StyledLikedSection>
       {productsArray

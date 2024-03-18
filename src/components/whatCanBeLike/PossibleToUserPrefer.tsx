@@ -4,7 +4,6 @@ import { data } from "@/data/data";
 import { SimilarProductsData } from "@/components/simularProductsData/SimilarProductsData";
 
 export const PossibleToUserPrefer = () => {
-  const productsArray = Object.values(data).slice(1);
   const [showMore, setShowMore] = useState(false);
   return (
     <StyledSimilarProductsContainer>
@@ -12,10 +11,7 @@ export const PossibleToUserPrefer = () => {
         Ще може сподобатись
       </StyledSimilarProductsTitle>
       <div>
-        <SimilarProductsData
-          productsArray={productsArray}
-          showMore={showMore}
-        />
+        <SimilarProductsData showMore={showMore} />
       </div>
       <div>
         <StyledDetailsContainer onClick={() => setShowMore(!showMore)}>
